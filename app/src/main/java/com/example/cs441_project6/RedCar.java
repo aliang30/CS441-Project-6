@@ -56,6 +56,12 @@ public class RedCar extends AppCompatActivity {
     private int score = 0;
     private int lives = 3;
 
+    //Button
+    private Button pauseBtn;
+
+    //Status Check
+    private boolean pause_flg = false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -74,6 +80,8 @@ public class RedCar extends AppCompatActivity {
                 openActivity();
             }
         });
+
+        pauseBtn = (Button) findViewById(R.id.pauseBtn);
 
         car = findViewById(R.id.audi);
         cone = findViewById(R.id.cone);
@@ -226,4 +234,45 @@ public class RedCar extends AppCompatActivity {
         };
     }
 
+    //pause button
+    public void pausePushed(View view) {
+        if (pause_flg == false) {
+            pause_flg = true;
+
+            timer.cancel();
+            timer = null;
+
+            pauseBtn.setText("Start");
+        } else {
+            pause_flg = false;
+
+            pauseBtn.setText("Pause");
+
+            timer = new Timer();
+
+            timer.schedule(new TimerTask() {
+                @Override
+                public void run() {
+                    handler.post(new Runnable() {
+                        @Override
+                        public void run() {
+                            linePos();
+                        }
+                    });
+                }
+            }, 0, 20);
+            
+            timer.schedule(new TimerTask() {
+                @Override
+                public void run() {
+                    handler.post(new Runnable() {
+                        @Override
+                        public void run() {
+                            carPos();
+                        }
+                    });
+                }
+            }, 1, 20);
+        }
+    }
 }
