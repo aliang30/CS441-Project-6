@@ -28,8 +28,6 @@ public class RedCar extends AppCompatActivity {
     private int screenWidth;
     private int screenHeight;
 
-    private Button button;
-
     private ImageView road;
 
     private float roadX;
@@ -72,14 +70,6 @@ public class RedCar extends AppCompatActivity {
         text_lives = findViewById(R.id.lives);
 
         road = findViewById(R.id.line);
-
-        button = (Button) findViewById(R.id.button);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openActivity();
-            }
-        });
 
         pauseBtn = (Button) findViewById(R.id.pauseBtn);
 
@@ -261,7 +251,7 @@ public class RedCar extends AppCompatActivity {
                     });
                 }
             }, 0, 20);
-            
+
             timer.schedule(new TimerTask() {
                 @Override
                 public void run() {

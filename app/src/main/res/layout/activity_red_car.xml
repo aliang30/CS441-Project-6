@@ -9,29 +9,14 @@
     tools:context=".RedCar">
 
     <Button
-        android:layout_width="140dp"
-        android:layout_height="50dp"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
         android:text="PAUSE"
-        android:textSize="20sp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        android:textSize="12sp"
+        android:layout_marginLeft="140dp"
+        android:layout_marginTop="10dp"
         android:id="@+id/pauseBtn"
         android:onClick="pausePushed" />
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="59dp"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_gravity="center"
-        android:layout_marginRight="160dp"
-        android:layout_marginBottom="600dp"
-        android:background="@android:drawable/ic_media_pause"
-        android:gravity="center"
-        android:textColor="@android:color/white"
-        android:textSize="14sp" />
 
     <ImageView
         android:id="@+id/line"
@@ -50,8 +35,8 @@
         android:layout_height="260dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="116dp"
-        android:layout_marginTop="507dp"
+        android:layout_marginLeft="110dp"
+        android:layout_marginTop="300dp"
         android:src="@drawable/audi" />
 
     <ImageView
@@ -67,11 +52,11 @@
         android:id="@+id/score"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="200dp"
+        android:layout_marginLeft="300dp"
         android:layout_marginTop="10dp"
         android:text="Score: 0"
         android:textColor="#FFFFFF"
-        android:textSize="24sp"
+        android:textSize="16sp"
         android:textStyle="bold" />
 
     <TextView
@@ -82,7 +67,7 @@
         android:layout_marginTop="10dp"
         android:text="Lives: 3"
         android:textColor="#FFFFFF"
-        android:textSize="24sp"
+        android:textSize="16sp"
         android:textStyle="bold" />
 
 </RelativeLayout>

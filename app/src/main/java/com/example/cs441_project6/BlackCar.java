@@ -28,8 +28,6 @@ public class BlackCar extends AppCompatActivity {
     private int screenWidth;
     private int screenHeight;
 
-    private Button button;
-
     private ImageView road;
 
     private float roadX;
@@ -49,11 +47,18 @@ public class BlackCar extends AppCompatActivity {
     private TextView text_score;
     private TextView text_lives;
 
-    private int score = 0;
-    private int lives = 3;
 
     private Handler handler = new Handler();
     private Timer timer = new Timer();
+
+    private int score = 0;
+    private int lives = 3;
+
+    //Button
+    private Button pauseBtn;
+
+    //Status Check
+    private boolean pause_flg = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,22 +66,16 @@ public class BlackCar extends AppCompatActivity {
         setContentView(R.layout.activity_black_car);
         mainLayout = (RelativeLayout) findViewById(R.id.main);
 
-        road = findViewById(R.id.line);
-
         text_score = findViewById(R.id.score);
         text_lives = findViewById(R.id.lives);
 
-        button = (Button) findViewById(R.id.button);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openActivity();
-            }
-        });
+        road = findViewById(R.id.line);
 
+        pauseBtn = (Button) findViewById(R.id.pauseBtn);
 
         car = findViewById(R.id.black_viper);
         cone = findViewById(R.id.cone);
+
 
         car.setOnTouchListener(onTouchListener());
 
@@ -122,6 +121,7 @@ public class BlackCar extends AppCompatActivity {
             }
         }, 1, 20);
 
+
     }
 
     public void openActivity() {
@@ -144,6 +144,7 @@ public class BlackCar extends AppCompatActivity {
 
     //Car movement
     public void carPos() {
+
         //Hit collision to cone
         if (hitDetect(coneX, coneY)) {
             //erase cone object
@@ -151,18 +152,19 @@ public class BlackCar extends AppCompatActivity {
             lives--;
             text_lives.setText("Lives: " + lives);
             if(lives == 0){
-                Intent intent = new Intent (this, Main4Activity.class);
+                Intent intent = new Intent (this, Main3Activity.class);
                 intent.putExtra("SCORE", score);
                 startActivity(intent);
             }
+
         }
         else{
             score += 1;
             text_score.setText("Score: " + score);
-        //    if(score == 1000){
-        //        Intent intent2 = new Intent(this, WinScreen.class);
-        //        startActivity(intent2);
-        //    }
+            // if(score == 1000){
+            //     Intent intent2 = new Intent(this, WinScreen.class);
+            //     startActivity(intent2);
+            // }
         }
 
         //cone speed
@@ -222,4 +224,45 @@ public class BlackCar extends AppCompatActivity {
         };
     }
 
+    //pause button
+    public void pausePushed(View view) {
+        if (pause_flg == false) {
+            pause_flg = true;
+
+            timer.cancel();
+            timer = null;
+
+            pauseBtn.setText("Start");
+        } else {
+            pause_flg = false;
+
+            pauseBtn.setText("Pause");
+
+            timer = new Timer();
+
+            timer.schedule(new TimerTask() {
+                @Override
+                public void run() {
+                    handler.post(new Runnable() {
+                        @Override
+                        public void run() {
+                            linePos();
+                        }
+                    });
+                }
+            }, 0, 20);
+
+            timer.schedule(new TimerTask() {
+                @Override
+                public void run() {
+                    handler.post(new Runnable() {
+                        @Override
+                        public void run() {
+                            carPos();
+                        }
+                    });
+                }
+            }, 1, 20);
+        }
+    }
 }
