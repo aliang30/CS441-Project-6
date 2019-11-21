@@ -22,7 +22,7 @@ public class Main2Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
 
-        play1 = (Button) findViewById(R.id.button);
+        play1 = (Button) findViewById(R.id.button0);
         play1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -39,7 +39,7 @@ public class Main2Activity extends AppCompatActivity {
         });
 
 
-        mainMenu = (Button) findViewById(R.id.button2);
+        mainMenu = (Button) findViewById(R.id.button8);
         mainMenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -47,8 +47,6 @@ public class Main2Activity extends AppCompatActivity {
             }
         });
 
-        //blinking text animation
-        blinkingEffect();
     }
 
     private void blinkingEffect() {
