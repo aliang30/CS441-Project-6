@@ -44,9 +44,20 @@
         android:layout_marginTop="130dp"
         android:paddingLeft="50dp"
         android:paddingRight="50dp"
-        android:text="You are late for an important event! Dodge the cones to make it to your destination. Be careful! 3 hits and you will fail."
+        android:text="You are late for an important event! Dodge the cones to make it to your destination! BE CAREFUL. 3 hits and you FAIL."
         android:textColor="#FFFFFFFF"
-        android:textSize="25sp" />
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/info2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="250dp"
+        android:paddingLeft="50dp"
+        android:paddingRight="50dp"
+        android:text="IMPORTANT... Before you hit quit during game, pause the game. "
+        android:textColor="#FFFFFFFF"
+        android:textSize="20sp" />
 
     <ImageView
         android:id="@+id/imageView"

@@ -13,9 +13,19 @@
         android:layout_height="40dp"
         android:text="PAUSE"
         android:textSize="12sp"
-        android:layout_marginLeft="130dp"
+        android:layout_marginLeft="8dp"
         android:layout_marginTop="520dp"
         android:id="@+id/pauseBtn"
+        android:onClick="pausePushed" />
+
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:text="QUIT"
+        android:textSize="12sp"
+        android:layout_marginLeft="255dp"
+        android:layout_marginTop="520dp"
+        android:id="@+id/QuitBtn"
         android:onClick="pausePushed" />
 
     <ImageView

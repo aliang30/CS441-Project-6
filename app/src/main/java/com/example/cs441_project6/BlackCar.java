@@ -56,6 +56,7 @@ public class BlackCar extends AppCompatActivity {
 
     //Button
     private Button pauseBtn;
+    private Button quitBtn;
 
     //Status Check
     private boolean pause_flg = false;
@@ -72,6 +73,14 @@ public class BlackCar extends AppCompatActivity {
         road = findViewById(R.id.line);
 
         pauseBtn = (Button) findViewById(R.id.pauseBtn);
+        quitBtn = (Button) findViewById(R.id.QuitBtn);
+
+        quitBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openResult();
+            }
+        });
 
         car = findViewById(R.id.black_viper);
         cone = findViewById(R.id.cone);
@@ -124,7 +133,7 @@ public class BlackCar extends AppCompatActivity {
 
     }
 
-    public void openActivity() {
+    public void openResult() {
         Intent intent = new Intent (this, Main3Activity.class);
         startActivity(intent);
     }

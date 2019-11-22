@@ -56,6 +56,7 @@ public class RedCar extends AppCompatActivity {
 
     //Button
     private Button pauseBtn;
+    private Button quitBtn;
 
     //Status Check
     private boolean pause_flg = false;
@@ -76,8 +77,8 @@ public class RedCar extends AppCompatActivity {
         car = findViewById(R.id.audi);
         cone = findViewById(R.id.cone);
 
-
         car.setOnTouchListener(onTouchListener());
+
 
         WindowManager wm = getWindowManager();
         Display disp = wm.getDefaultDisplay();
@@ -122,9 +123,17 @@ public class RedCar extends AppCompatActivity {
         }, 1, 20);
 
 
+        quitBtn = (Button) findViewById(R.id.QuitBtn);
+
+        quitBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openResult();
+            }
+        });
     }
 
-    public void openActivity() {
+    public void openResult() {
         Intent intent = new Intent (this, Main3Activity.class);
         startActivity(intent);
     }
@@ -152,9 +161,9 @@ public class RedCar extends AppCompatActivity {
             lives--;
             text_lives.setText("Lives: " + lives);
             if(lives == 0){
-                Intent intent = new Intent (this, Main3Activity.class);
-                intent.putExtra("SCORE", score);
-                startActivity(intent);
+                Intent intent2 = new Intent (this, Main3Activity.class);
+                intent2.putExtra("SCORE", score);
+                startActivity(intent2);
             }
 
         }
