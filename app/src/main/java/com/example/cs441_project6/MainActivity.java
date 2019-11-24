@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        /*
         startButton = (Button) findViewById(R.id.button);
         startButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -32,7 +32,21 @@ public class MainActivity extends AppCompatActivity {
                 openActivity2();
             }
         });
+        */
 
+        findViewById(R.id.start).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openActivity();
+            }
+        });
+
+        findViewById(R.id.instruction).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openActivity2();
+            }
+        });
     }
 
     public void openActivity() {

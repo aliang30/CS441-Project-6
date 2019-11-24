@@ -7,19 +7,64 @@
     android:background="@drawable/traffic"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <ImageView
+        android:layout_width="220dp"
+        android:layout_height="220dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
         android:layout_gravity="center"
-        android:layout_marginTop="70dp"
+        android:layout_marginRight="65dp"
+        android:layout_marginBottom="350dp"
         android:gravity="center|center_horizontal"
-        android:text="AVOID THE TRAFFIC!"
-        android:textColor="#FFFFFF"
-        android:textSize="50dp"
-        android:textStyle="bold"
-        android:typeface="monospace" />
+        android:src="@drawable/logo" />
 
+    <ImageView
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="center"
+        android:layout_marginRight="35dp"
+        android:layout_marginBottom="228dp"
+        android:gravity="center|center_horizontal"
+        android:src="@drawable/logo2" />
+
+    <ImageButton
+        android:id="@+id/start"
+        android:layout_width="180dp"
+        android:layout_height="45dp"
+        android:src="@drawable/button_start"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="center"
+        android:layout_marginRight="88dp"
+        android:layout_marginBottom="260dp"
+        android:gravity="center"/>
+
+    <ImageButton
+        android:id="@+id/instruction"
+        android:layout_width="180dp"
+        android:layout_height="45dp"
+        android:src="@drawable/button_instructions"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="center"
+        android:layout_marginRight="88dp"
+        android:layout_marginBottom="200dp"
+        android:gravity="center"/>
+
+    <ImageButton
+        android:id="@+id/button3"
+        android:layout_width="180dp"
+        android:layout_height="45dp"
+        android:src="@drawable/button_highscore"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="center"
+        android:layout_marginRight="88dp"
+        android:layout_marginBottom="140dp"
+        android:gravity="center"/>
+    <!--
     <Button
         android:id="@+id/button"
         android:layout_width="180dp"
@@ -64,5 +109,5 @@
         android:text="Check HighScore"
         android:textColor="@android:color/white"
         android:textSize="14sp" />
-
+    -->
 </RelativeLayout>
