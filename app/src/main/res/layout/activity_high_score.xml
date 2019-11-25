@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/traffic"
-    tools:context=".Main3Activity">
+    tools:context=".HighScore">
 
     <TextView
         android:id="@+id/text"
@@ -14,7 +14,7 @@
         android:layout_gravity="center"
         android:layout_marginTop="50dp"
         android:gravity="center"
-        android:text="GAME OVER"
+        android:text="HighScore"
         android:textColor="#FFFFFF"
         android:textSize="50dp"
         android:textStyle="bold"

@@ -15,6 +15,12 @@ public class Main2Activity extends AppCompatActivity {
 
     private Button play1;
     private Button play2;
+    private Button play3;
+    private Button play4;
+    private Button play5;
+    private Button play6;
+    private Button play7;
+    private Button play8;
     private Button mainMenu;
 
     @Override
@@ -30,7 +36,7 @@ public class Main2Activity extends AppCompatActivity {
             }
         });
 
-        play2 = (Button) findViewById(R.id.button1);
+        play2 = (Button) findViewById(R.id.button);
         play2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -38,12 +44,59 @@ public class Main2Activity extends AppCompatActivity {
             }
         });
 
-
-        mainMenu = (Button) findViewById(R.id.button8);
-        mainMenu.setOnClickListener(new View.OnClickListener() {
+        play3 = (Button) findViewById(R.id.button1);
+        play3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 openActivity2();
+            }
+        });
+
+        play4 = (Button) findViewById(R.id.button2);
+        play4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openActivity3();
+            }
+        });
+
+        play5 = (Button) findViewById(R.id.button3);
+        play5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openActivity4();
+            }
+        });
+
+        play6 = (Button) findViewById(R.id.button4);
+        play6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openActivity5();
+            }
+        });
+
+        play7 = (Button) findViewById(R.id.button5);
+        play7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openActivity6();
+            }
+        });
+
+        play8 = (Button) findViewById(R.id.button6);
+        play8.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openActivity7();
+            }
+        });
+
+        mainMenu = (Button) findViewById(R.id.button7);
+        mainMenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openActivity8();
             }
         });
 
@@ -93,8 +146,38 @@ public class Main2Activity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    //Opens main menu
     public void openActivity2() {
+        Intent intent = new Intent (this, Ambulance.class);
+        startActivity(intent);
+    }
+
+    public void openActivity3() {
+        Intent intent = new Intent (this, Truck2.class);
+        startActivity(intent);
+    }
+
+    public void openActivity4() {
+        Intent intent = new Intent (this, OrangeCar.class);
+        startActivity(intent);
+    }
+
+    public void openActivity5() {
+        Intent intent = new Intent (this, Police.class);
+        startActivity(intent);
+    }
+
+    public void openActivity6() {
+        Intent intent = new Intent (this, Taxi.class);
+        startActivity(intent);
+    }
+
+    public void openActivity7() {
+        Intent intent = new Intent (this, Van.class);
+        startActivity(intent);
+    }
+
+    //Opens main menu
+    public void openActivity8() {
         Intent intent = new Intent (this, MainActivity.class);
         startActivity(intent);
     }

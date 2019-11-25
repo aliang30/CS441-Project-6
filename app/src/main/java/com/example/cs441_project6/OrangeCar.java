@@ -21,7 +21,7 @@ import android.widget.TextView;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class RedCar extends AppCompatActivity {
+public class OrangeCar extends AppCompatActivity {
 
     private ViewGroup mainLayout;
 
@@ -64,7 +64,7 @@ public class RedCar extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_red_car);
+        setContentView(R.layout.activity_orange_car);
         mainLayout = (RelativeLayout) findViewById(R.id.main);
 
         text_score = findViewById(R.id.score);
