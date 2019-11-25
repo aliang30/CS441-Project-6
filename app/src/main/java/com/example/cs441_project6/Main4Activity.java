@@ -126,7 +126,7 @@ public class Main4Activity extends AppCompatActivity {
 
     //Opens main menu
     public void openActivity2() {
-        Intent intent = new Intent (this, MainActivity.class);
+        Intent intent = new Intent (this, MainMenu.class);
         intent.putExtra("SCORE", highScore1);
         startActivity(intent);
     }
