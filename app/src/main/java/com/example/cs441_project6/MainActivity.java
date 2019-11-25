@@ -12,10 +12,15 @@ public class MainActivity extends AppCompatActivity {
     private Button startButton;
     private Button secondButton;
 
+    int score1;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        score1 = getIntent().getIntExtra("SCORE", 0);
+
         /*
         startButton = (Button) findViewById(R.id.button);
         startButton.setOnClickListener(new View.OnClickListener() {
@@ -69,6 +74,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void openActivity3() {
         Intent intent = new Intent (this, HighScore.class);
+        intent.putExtra("SCORE", score1);
         startActivity(intent);
     }
 }

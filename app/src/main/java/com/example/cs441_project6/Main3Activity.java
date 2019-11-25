@@ -19,6 +19,7 @@ public class Main3Activity extends AppCompatActivity {
     private Button retry;
     private Button chooseCar;
     private Button mainMenu;
+    int highScore1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,8 +35,7 @@ public class Main3Activity extends AppCompatActivity {
         score.setText("Score : " + score1);
 
         SharedPreferences settings = getSharedPreferences("GAME_DATA", Context.MODE_PRIVATE);
-        int highScore1 = settings.getInt("HIGH_SCORE", 0);
-
+        highScore1 = settings.getInt("HIGH_SCORE", 0);
 
         if (score1 > highScore1) {
             highScore.setTextColor(Color.BLUE);
@@ -127,6 +127,8 @@ public class Main3Activity extends AppCompatActivity {
     //Opens main menu
     public void openActivity2() {
         Intent intent = new Intent (this, MainActivity.class);
+        intent.putExtra("SCORE", highScore1);
         startActivity(intent);
     }
+
 }
