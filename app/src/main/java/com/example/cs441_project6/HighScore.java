@@ -13,18 +13,19 @@ import android.widget.TextView;
 public class HighScore extends AppCompatActivity {
 
     private Button mainMenu;
+    int score1 = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_high_score);
 
-        TextView score = findViewById(R.id.score);
+        TextView scoreView = findViewById(R.id.score);
 
-        int score1 = getIntent().getIntExtra("SCORE", 0);
+        score1 = getIntent().getIntExtra("SCORE", 0);
 
-        score.setTextColor(Color.WHITE);
-        score.setText("Score : " + score1);
+        scoreView.setTextColor(Color.WHITE);
+        scoreView.setText("Score : " + score1);
 
         mainMenu = (Button) findViewById(R.id.button2);
         mainMenu.setOnClickListener(new View.OnClickListener() {
